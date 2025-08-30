@@ -6,6 +6,11 @@
     --primary-color: #0f1b4c;
 }
 
+html,
+body {
+    scroll-behavior: smooth;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -51,16 +56,18 @@ a {
 }
 
 /* ================= HEADER ===================== */
-.header {
-    position: relative;
+.fixed-header {
     background: #e6f0ff;
-    height: 100vh;
+    padding-top: 26px;
+    position: sticky;
+    top: -26px;
+    z-index: 1;
 }
 /* ---------------- NAVIGATION ------------------- */
 .navbar {
     display: flex;
     align-items: center;
-    padding-top: 38px;
+    padding: 12px 0;
 }
 
 .navbar ul {
@@ -95,15 +102,19 @@ a {
     border-radius: 8px;
 }
 /* ---------------- HERO PAGE ------------------- */
-.hero {
-    margin-top: 130px;
+.hero-wrap {
+    position: relative;
+    background: #e6f0ff;
+    height: calc(100vh - 90px);
+    display: flex;
+    align-items: center;
 }
 
-.hero .info {
+.hero-wrap .info {
     width: 51%;
 }
 
-.hero .sub-title {
+.hero-wrap .sub-title {
     font-weight: 500;
     font-size: 1.8rem;
     line-height: 1.5;
@@ -111,7 +122,7 @@ a {
     color: #687690;
 }
 
-.hero .title {
+.hero-wrap .title {
     margin-top: 8px;
     font-weight: 700;
     font-size: 6.2rem;
@@ -119,7 +130,7 @@ a {
     color: #000336;
 }
 
-.hero .desc {
+.hero-wrap .desc {
     margin-top: 30px;
     font-weight: 400;
     font-size: 1.8rem;
@@ -164,22 +175,19 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 96px;
+    margin-top: 70px;
 }
 
-.clients .images .amazon-space {
+.clients .images a {
     display: flex;
-    justify-content: center;
-    width: 20.4rem;
-    height: 9.1rem;
+    align-items: center;
+    height: 90px;
+    padding: 0 42px;
     border-radius: 12px;
-    color: #ffffff;
-    box-shadow: 0 10px 20px 0 #0000001a;
 }
 
-.clients .images .amazon-logo {
-    margin-top: 31.8px;
-    margin-bottom: 22.6px;
+.clients .images a:hover {
+    box-shadow: 0 10px 20px 0 #0000001a;
 }
 
 /* ================= GUIDES ===================== */
@@ -503,13 +511,13 @@ a {
     color: #7b8087;
 }
 /* ================= SUBSCRIPTION ===================== */
-.subcription {
+.subscription {
     margin: 51px;
     border-radius: 20px;
     padding-top: 39px;
 }
 
-.subcription .body {
+.subscription .body {
     height: 370px;
     background: #063183;
     border-radius: 20px;
@@ -518,20 +526,20 @@ a {
     position: relative;
 }
 
-.subcription .info {
+.subscription .info {
     padding: 0 80px;
     width: 670px;
     max-width: 100%;
 }
 
-.subcription .sub-title {
+.subscription .sub-title {
     font-weight: 600;
     font-size: 3.5rem;
     line-height: 1.5;
     color: #ffffff;
 }
 
-.subcription .desc {
+.subscription .desc {
     margin-top: 15px;
     font-weight: 400;
     font-size: 1.6rem;
@@ -539,14 +547,14 @@ a {
     color: #ffffff;
 }
 
-.subcription .btn {
+.subscription .btn {
     min-width: 151px;
     background-color: #fff;
     color: #002366;
     margin-top: 34px;
 }
 
-.subcription .image {
+.subscription .image {
     position: absolute;
     bottom: 0;
     right: 221px;
@@ -606,7 +614,10 @@ a {
     width: 28px;
     height: 28px;
     border-radius: 3px;
-    margin-right: 16px;
+}
+
+.footer .social-link + .social-link {
+    margin-left: 16px;
 }
 
 .footer .social-link:hover {
